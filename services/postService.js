@@ -1,7 +1,9 @@
 const { Post } = require('../models');
 
 const getAllPosts = async () => {
-  return await Post.findAll();
+  return await Post.findAll({
+    order: [['id', 'DESC']]
+  });
 };
 
 const getPostById = async (id) => {
